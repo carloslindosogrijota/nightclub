@@ -1,13 +1,12 @@
 package uax.oop.nightclub;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
+import uax.oop.nightclub.models.*;
+import uax.oop.nightclub.utils.*;
 public class NightclubApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NightclubApplication.class, args);
+		tools t = new tools();
+		Guest g1 = new Guest("23874348A", "Pepe", 18, false);
 	}
 
 }
