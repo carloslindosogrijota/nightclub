@@ -7,6 +7,7 @@ public class NightclubApplication {
 	public static void main(String[] args) {
 		tools t = new tools();
 		Guest g1 = new Guest("23874348A", "Pepe", 18, false);
+		Guest g2 = new Guest("37347347B", "Pepa", 20, false);
 		
 	}
 
