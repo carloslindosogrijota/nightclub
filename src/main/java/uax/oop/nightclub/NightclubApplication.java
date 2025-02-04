@@ -5,10 +5,12 @@ import uax.oop.nightclub.utils.tools;
 public class NightclubApplication {
 
 	public static void main(String[] args) {
+
 		tools t = new tools();
 		Guest g1 = new Guest("23874348A", "Pepe", 18, false);
 		Guest g2 = new Guest("37347347B", "Pepa", 20, false);
 		Guest g3 = new Guest("61523653X", "Raúl", 19, true);
+
 	}
 
 }
