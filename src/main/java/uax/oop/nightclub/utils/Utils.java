@@ -1,7 +1,7 @@
 package uax.oop.nightclub.utils;
 
-public class Tools {
+public class Utils {
 
-//dwa
+
 
 }
