@@ -5,8 +5,8 @@ public class Guest {
     private String name;
     private int age;
     private boolean hasReservation;
-    private String reservedTables;
-    public Guest(int age, String dni, boolean hasReservation, String name, String reservedTables) {
+    private Table reservedTables;
+    public Guest(int age, String dni, boolean hasReservation, String name, Table reservedTables) {
         this.age = age;
         this.dni = dni;
         this.hasReservation = hasReservation;
@@ -37,10 +37,10 @@ public class Guest {
     public void setHasReservation(boolean hasReservation) {
         this.hasReservation = hasReservation;
     }
-    public String getReservedTables() {
+    public Table getReservedTables() {
         return reservedTables;
     }
-    public void setReservedTables(String reservedTables) {
+    public void setReservedTables(Table reservedTables) {
         this.reservedTables = reservedTables;
     }
     @Override
