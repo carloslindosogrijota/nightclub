@@ -5,12 +5,13 @@ public class Guest {
     private String name;
     private int age;
     private boolean hasReservation;
-    public Object se;
-    public Guest(String dni, String name, int age, boolean hasReservation) {
-        this.dni = dni;
-        this.name = name;
+    private String reservedTables;
+    public Guest(int age, String dni, boolean hasReservation, String name, String reservedTables) {
         this.age = age;
+        this.dni = dni;
         this.hasReservation = hasReservation;
+        this.name = name;
+        this.reservedTables = reservedTables;
     }
     public String getDni() {
         return dni;
@@ -36,9 +37,15 @@ public class Guest {
     public void setHasReservation(boolean hasReservation) {
         this.hasReservation = hasReservation;
     }
+    public String getReservedTables() {
+        return reservedTables;
+    }
+    public void setReservedTables(String reservedTables) {
+        this.reservedTables = reservedTables;
+    }
     @Override
     public String toString() {
-        return "Guest [dni=" + dni + ", name=" + name + ", age=" + age + ", hasReservation=" + hasReservation + "]";
+        return "Guest [dni=" + dni + ", name=" + name + ", age=" + age + ", hasReservation=" + hasReservation
+                + ", reservedTables=" + reservedTables + "]";
     }
-    
 }
