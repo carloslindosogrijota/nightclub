@@ -5,6 +5,7 @@ public class Table {
     private boolean isVip;
     private boolean isAvailable;
     private ArrayList<Guest> guestTablesReserved;
+    private ArrayList<Order> ordersOfTable;
     public Table(int tableId, int capacity, boolean isVip, boolean isAvailable) {
         this.tableId = tableId;
         this.capacity = capacity;
