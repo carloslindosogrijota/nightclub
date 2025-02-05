@@ -28,8 +28,8 @@ public class Utils {
 // --------------------------------------------------------------------
     // Funcionalidad 4:
     // Método para realizar pedidos asociados a mesas
-    // - calcular costo total de dichos
-    public Order tablesOrders(Order myOrder, Table myTable) {
+    // Método para calcular costo total de los pedidos de una mesa.
+    public tablesOrders(Order myOrder, Table myTable) {
 
         return myOrder;
     }
