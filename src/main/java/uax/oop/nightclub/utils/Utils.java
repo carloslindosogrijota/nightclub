@@ -12,10 +12,10 @@ public class Utils {
 
 // --------------------------------------------------------------------
     // Funcionalidad 2:
-    // Método para añadir mesas VIP o normales a 'x' persona/s.
+    // Método para añadir mesas VIP o normales a 'x' persona/s. Y comprobar que no se coja una mesa ya reservada.
     // Método para mostrar mesas disponibles.
     public Guest tableManagment(Table myTable, Guest myGuest) {
-
+    // Añadir la mesa que se quiere reservar a la lista de mesas de el usuario solicitado.
         return myGuest;
     }
     public ArrayList<Table> viewTables(ArrayList<Table> myTablesList) {
