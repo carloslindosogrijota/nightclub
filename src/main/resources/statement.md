@@ -54,7 +54,7 @@ Un sistema que simula la gestión de una discoteca, permitiendo administrar invi
 - Registrar nuevos invitados en la discoteca, verificando su edad.
 - Mostrar mesas disponibles, clasificándolas como VIP o normales.
 - Permitir reservas de mesas y liberar mesas cuando los invitados se van.
-- Realizar pedidos asociados a mesas y calcular el costo total, al igual que con las personas.
+- Realizar pedidos asociados a mesas y calcular el costo total.
 - Mostrar un resumen de las actividades de la noche, incluyendo invitados, pedidos y mesas ocupadas.
 
 **Ejemplo de Ejecución**:
