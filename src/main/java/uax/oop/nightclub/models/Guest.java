@@ -1,11 +1,11 @@
 package uax.oop.nightclub.models;
-
+import java.utils.ArrayList;
 public class Guest {
     private String dni;
     private String name;
     private int age;
     private boolean hasReservation;
-    private Table reservedTables;
+    private ArrayList<Table> reservedTables;
     public Guest(int age, String dni, boolean hasReservation, String name, Table reservedTables) {
         this.age = age;
         this.dni = dni;
