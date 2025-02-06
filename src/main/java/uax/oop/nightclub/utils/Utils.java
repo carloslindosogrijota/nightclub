@@ -54,14 +54,16 @@ public class Utils {
 // --------------------------------------------------------------------
     // Funcionalidad 4:
     // Método para realizar pedidos asociados a mesas
-    // Método para calcular costo total de los pedidos de una mesa.
-    public Table tablesOrders(Order myOrder, Table myTable) {
-
-        return myTable.get(ordersOfTable);
+    public String tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
+        myTable.getOrdersOfTable().addAll(myOrdersList);
+        return "The following orders have been added to the " + myTable;
     }
-    public double orderTotalPriceOfTable (Table tablesOrders) {
-        double result;
-        
+    // Método para calcular costo total de los pedidos de una mesa.
+    public double orderTotalPriceOfTable (Table myTable) {
+        double result = 0;
+        for (Order x : myTable.getOrdersOfTable()) {
+            result += x.getTotalPrice();
+        }
         return result;
     }
 // --------------------------------------------------------------------
