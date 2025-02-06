@@ -16,15 +16,34 @@ public class Utils {
     
 // --------------------------------------------------------------------
     // Funcionalidad 2:
-    // Método para añadir mesas VIP o normales a 'x' persona/s. Y comprobar que no se coja una mesa ya reservada.
-    // Método para mostrar mesas disponibles.
-    public Guest tableManagment(Table myTable, Guest myGuest) {
-    // Añadir la mesa que se quiere reservar a la lista de mesas de el usuario solicitado.
-        return myGuest;
+    // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se coja una mesa ya reservada, y comprobar que la capacidad de personas en la mesa no se exceda.
+    public String tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
+        String resultado="";
+        if(myTable.isIsAvailable()==true && myGuestList.size()<myTable.getCapacity() && myTable.isIsVip()){
+            myTable.getGuestTablesReserved().addAll(myGuestList);
+            myTable.setIsAvailable(false);
+            resultado += "The guests of the list have added to the VIP table " + myTable.getTableId();
+        }
+        if(myTable.isIsAvailable()==true && myGuestList.size()<myTable.getCapacity() && !myTable.isIsVip()){
+            myTable.getGuestTablesReserved().addAll(myGuestList);
+            myTable.setIsAvailable(false);
+            resultado += "The guests of the list have added to the table " + myTable.getTableId();
+        } else if (myTable.isIsAvailable()==true && myGuestList.size()>myTable.getCapacity()){
+            throw new Exception ("The guests of the list exceeded the permitted number of guests");
+        }else {
+            throw new Exception ("The table isn't avaible");
+        }
+        return resultado;
     }
-    public ArrayList<Table> viewTables(ArrayList<Table> myTablesList) {
-
-        return myTablesList;
+    //Método para mostrar la Lista de tablas disponibles.
+    public ArrayList<String> viewTables(ArrayList<Table> myTablesList) {
+        ArrayList<String> myAvailableTables = new ArrayList<>();
+        for (Table x : myTablesList) {
+            if(x.isIsAvailable()){
+                myAvailableTables.add(x.toString());
+            }
+        }
+        return myAvailableTables;
     }
 // --------------------------------------------------------------------
     // Funcionalidad 3:
