@@ -1,18 +1,22 @@
 package uax.oop.nightclub.models;
-import java.utils.ArrayList;
+
+import java.util.ArrayList;
+
 public class Guest {
     private String dni;
     private String name;
     private int age;
     private boolean hasReservation;
     private ArrayList<Table> reservedTables;
-    public Guest(int age, String dni, boolean hasReservation, String name, Table reservedTables) {
+
+    public Guest(int age, String dni, boolean hasReservation, String name, ArrayList<Table> reservedTables) {
         this.age = age;
         this.dni = dni;
         this.hasReservation = hasReservation;
         this.name = name;
         this.reservedTables = reservedTables;
     }
+
     public String getDni() {
         return dni;
     }
@@ -37,12 +41,13 @@ public class Guest {
     public void setHasReservation(boolean hasReservation) {
         this.hasReservation = hasReservation;
     }
-    public Table getReservedTables() {
+    public ArrayList<Table> getReservedTables() {
         return reservedTables;
     }
-    public void setReservedTables(Table reservedTables) {
+    public void setReservedTables(ArrayList<Table> reservedTables) {
         this.reservedTables = reservedTables;
     }
+
     @Override
     public String toString() {
         return "Guest [dni=" + dni + ", name=" + name + ", age=" + age + ", hasReservation=" + hasReservation

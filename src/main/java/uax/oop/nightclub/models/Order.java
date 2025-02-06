@@ -1,15 +1,18 @@
 package uax.oop.nightclub.models;
+
 public class Order {
     private int orderId;
     private Table table;
     private String item;
     private double totalPrice;
+
     public Order(int orderId, Table table, String item, double totalPrice) {
         this.orderId = orderId;
         this.table = table;
         this.item = item;
         this.totalPrice = totalPrice;
     }
+
     public int getOrderId() {
         return orderId;
     }
@@ -34,9 +37,9 @@ public class Order {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
+
     @Override
     public String toString() {
         return "Order [orderId=" + orderId + ", table=" + table + ", item=" + item + ", totalPrice=" + totalPrice + "]";
     }
-    
 }

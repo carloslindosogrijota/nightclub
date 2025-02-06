@@ -1,4 +1,5 @@
 package uax.oop.nightclub.models;
+
 import java.util.ArrayList;
 
 public class NightClub {
@@ -10,6 +11,7 @@ public class NightClub {
         this.tables = tables;
         this.orders = orders;
     }
+
     public ArrayList<Guest> getGuests() {
         return guests;
     }
@@ -28,6 +30,7 @@ public class NightClub {
     public void setOrders(ArrayList<Order> orders) {
         this.orders = orders;
     }
+
     @Override
     public String toString() {
         return "NightClub [guests=" + guests + ", tables=" + tables + ", orders=" + orders + "]";
