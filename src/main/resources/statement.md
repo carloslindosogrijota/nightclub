@@ -30,7 +30,6 @@ Un sistema que simula la gestión de una discoteca, permitiendo administrar invi
 
    - **Atributos**:
      - `orderId` (ID único del pedido)
-     - `table` (mesa asociada al pedido)
      - `items` (lista de artículos pedidos, como "Botella de Champagne", "Cerveza", "Coctel")
      - `totalPrice` (precio total del pedido)
    - **Métodos**:

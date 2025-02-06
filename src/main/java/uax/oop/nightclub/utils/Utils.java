@@ -7,15 +7,15 @@ import uax.oop.nightclub.models.Order;
 import uax.oop.nightclub.models.Table;
 
 public class Utils {
-    
+
 // --------------------------------------------------------------------
-    // Funcionalidad 1:
+// Funcionalidad 1:
 
 // --------------------------------------------------------------------
 
-    
+
 // --------------------------------------------------------------------
-    // Funcionalidad 2:
+// Funcionalidad 2:
     // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se coja una mesa ya reservada, y comprobar que la capacidad de personas en la mesa no se exceda.
     public String tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
         String resultado="";
@@ -46,13 +46,13 @@ public class Utils {
         return myAvailableTables;
     }
 // --------------------------------------------------------------------
-    // Funcionalidad 3:
+// Funcionalidad 3:
 
 // --------------------------------------------------------------------
 
-    
+
 // --------------------------------------------------------------------
-    // Funcionalidad 4:
+// Funcionalidad 4:
     // Método para realizar pedidos asociados a mesas
     public String tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
         myTable.getOrdersOfTable().addAll(myOrdersList);
