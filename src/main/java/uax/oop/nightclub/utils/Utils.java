@@ -20,12 +20,7 @@ public class Utils {
     // mesa no se exceda.
     public String tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
         String resultado = "";
-        if (myTable.isIsAvailable() == true && myGuestList.size() < myTable.getCapacity() && myTable.isIsVip()) {
-            myTable.getGuestTablesReserved().addAll(myGuestList);
-            myTable.setIsAvailable(false);
-            resultado += "The guests of the list have added to the VIP table " + myTable.getTableId();
-        } else if (myTable.isIsAvailable() == true && myGuestList.size() < myTable.getCapacity()
-                && !myTable.isIsVip()) {
+        if (myTable.isIsAvailable() == true && myGuestList.size() < myTable.getCapacity()) {
             myTable.getGuestTablesReserved().addAll(myGuestList);
             myTable.setIsAvailable(false);
             resultado += "The guests of the list have added to the table " + myTable.getTableId();
