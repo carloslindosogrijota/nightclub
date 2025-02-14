@@ -65,7 +65,7 @@ public class Utils {
     // Funcionalidad 4:
 
     // Método para realizar pedidos asociados a mesas
-    public ArrayList<Order>  tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
+    public ArrayList<Order> tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
         myTable.getOrdersOfTable().addAll(myOrdersList);
         return myOrdersList;
     }
