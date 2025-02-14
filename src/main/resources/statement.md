@@ -42,11 +42,6 @@ Un sistema que simula la gestión de una discoteca, permitiendo administrar invi
      - `tables` (lista de mesas disponibles)
      - `orders` (lista de pedidos realizados)
    - **Métodos**:
-     - `addGuest(Guest guest)`: Añade un invitado al sistema.
-     - `listAvailableTables()`: Muestra las mesas disponibles.
-     - `reserveTable(Guest guest, Table table)`: Permite a un invitado reservar una mesa.
-     - `processOrder(Table table, List<String> items)`: Crea un pedido para una mesa específica.
-     - `closeOrder(Table table)`: Finaliza un pedido y libera la mesa.
 
 **Funcionalidades**:
 
