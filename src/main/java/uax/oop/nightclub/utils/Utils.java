@@ -24,19 +24,19 @@ public class Utils {
 
     // Método para mostrar la lista de tablas disponibles.
     // clasificándolas como VIP o normales.
-    public Map<String, ArrayList<String>> listAvailableTables(ArrayList<Table> myTablesList) {
-        ArrayList<String> myAvailableVIPTables = new ArrayList<>();
-        ArrayList<String> myAvailableTables = new ArrayList<>();
+    public Map<String, ArrayList<Table>> listAvailableTables(ArrayList<Table> myTablesList) {
+        ArrayList<Table> myAvailableVIPTables = new ArrayList<>();
+        ArrayList<Table> myAvailableTables = new ArrayList<>();
 
         for (Table x : myTablesList) {
             if (x.isIsAvailable() && x.isIsVip()) {
-                myAvailableVIPTables.add(x.toString());
+                myAvailableVIPTables.add(x);
             }
             else if (x.isIsAvailable() && !x.isIsVip()) {
-                myAvailableTables.add(x.toString());
+                myAvailableTables.add(x);
             }
         }
-        Map <String, ArrayList<String>> result = new HashMap<>();
+        Map <String, ArrayList<Table>> result = new HashMap<>();
         result.put("VIP", myAvailableVIPTables);
         result.put("Normal", myAvailableTables);
 
@@ -49,29 +49,25 @@ public class Utils {
     // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se
     // coja una mesa ya reservada, y comprobar que la capacidad de personas en la
     // mesa no se exceda.
-    public String tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
-        String result="";
+    public Table tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
         if (myTable.isIsAvailable() == true && myGuestList.size() < myTable.getCapacity()) {
             myTable.getGuestTablesReserved().addAll(myGuestList);
             myTable.setIsAvailable(false);
-            result += "The guests of the list have added to the table " + myTable.getTableId();
         } else if (myTable.isIsAvailable() == true && myGuestList.size() > myTable.getCapacity()) {
-            result += "The guests of the list exceeded the permitted number of guests";
             throw new Exception("The guests of the list exceeded the permitted number of guests");
         } else {
-            result += "The table isn't avaible";
             throw new Exception("The table isn't avaible");
         }
-        return result;
+        return myTable;
     }
 
 
     // Funcionalidad 4:
 
     // Método para realizar pedidos asociados a mesas
-    public String tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
+    public ArrayList<Order>  tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
         myTable.getOrdersOfTable().addAll(myOrdersList);
-        return "The following orders have been added to the " + myTable;
+        return myOrdersList;
     }
     // Método para calcular costo total de los pedidos de una mesa.
     public double orderTotalPriceOfTable(Table myTable) {
