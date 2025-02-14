@@ -1,7 +1,5 @@
 package uax.oop.nightclub.utils;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,13 +12,11 @@ public class Utils {
     // Funcionalidad 1:
 
     // Método para registrar nuevos invitados en la discoteca, verificando su edad.
-    public String addGuests(Guest myGuest, ArrayList<Guest>myClubGuests ) {
-        String result="";
+    public ArrayList<Guest> addGuests(Guest myGuest, ArrayList<Guest>myClubGuests ) {
         if(myGuest.getAge()>=18){
             myClubGuests.add(myGuest);
-            result += "The guest " + myGuest + "has been added to the list. At " + LocalDate.now() + " - " + LocalTime.now();
         }
-        return result;
+        return myClubGuests;
     }
 
 
