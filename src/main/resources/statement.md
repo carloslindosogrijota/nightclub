@@ -43,6 +43,7 @@ Un sistema que simula la gestión de una discoteca, permitiendo administrar invi
      - `orders` (lista de pedidos realizados)
    - **Métodos**:
 
+
 **Funcionalidades**:
 
 - Registrar nuevos invitados en la discoteca, verificando su edad.
