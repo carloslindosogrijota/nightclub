@@ -10,7 +10,6 @@ import uax.oop.nightclub.models.Order;
 import uax.oop.nightclub.models.Table;
 
 public class Utils {
-    // Funcionalidad 1:
     // Método para registrar nuevos invitados en la discoteca, verificando su edad.
     public ArrayList<Guest> addGuests(Guest myGuest, ArrayList<Guest> myClubGuests, NightClub myNightClub) {
         if (myGuest.getAge() >= 18) {
@@ -20,7 +19,6 @@ public class Utils {
         return myClubGuests;
     }
 
-    // Funcionalidad 2:
     // Método para mostrar la lista de tablas disponibles.
     // clasificándolas como VIP o normales.
     public Map<String, ArrayList<Table>> listAvailableTables(ArrayList<Table> myTablesList) {
@@ -39,7 +37,6 @@ public class Utils {
         return result;
     }
 
-    // Funcionalidad 3:
     // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se
     // coja una mesa ya reservada, y comprobar que la capacidad de personas en la
     // mesa no se exceda.
@@ -55,7 +52,6 @@ public class Utils {
         return myTable;
     }
 
-    // Funcionalidad 4:
     // Método para realizar pedidos asociados a mesas
     public ArrayList<Order> tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
         myTable.getOrdersOfTable().addAll(myOrdersList);
@@ -72,7 +68,6 @@ public class Utils {
         return result;
     }
 
-    // Funcionalidad 5
     // Método para mostrar el total de ingresos de la noche.
     public double viewEarnings(NightClub myNightClub) {
         double result = 0;
