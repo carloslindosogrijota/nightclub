@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import uax.oop.nightclub.models.Guest;
+import uax.oop.nightclub.models.Order;
 import uax.oop.nightclub.models.Table;
 
 public class NightclubApplication {
 
 	public static void main(String[] args) {
+
+		// Instancio todas las mesas de la discoteca.
 		Table t1 = new Table(4, new ArrayList<>(), true, false, new ArrayList<>(), 1);
 		Table t2 = new Table(6, new ArrayList<>(), true, true, new ArrayList<>(), 2);
 		Table t3 = new Table(8, new ArrayList<>(), true, false, new ArrayList<>(), 3);
@@ -16,6 +19,7 @@ public class NightclubApplication {
 		Table t5 = new Table(10, new ArrayList<>(), true, false, new ArrayList<>(), 5);
 		Table t6 = new Table(6, new ArrayList<>(), false, false, new ArrayList<>(), 6);
 
+		// Instancio todos los clientes de la discoteca.
 		Guest g1 = new Guest(16, "12345678A", false, "Juan Pérez", new ArrayList<>(Arrays.asList(t1)));
 		Guest g2 = new Guest(18, "87654321B", false, "María López", new ArrayList<>(Arrays.asList(t1, t2)));
 		Guest g3 = new Guest(20, "56781234C", false, "Carlos García", new ArrayList<>(Arrays.asList(t2)));
@@ -37,6 +41,17 @@ public class NightclubApplication {
 		Guest g19 = new Guest(52, "04321098S", false, "Sergio Mendoza", new ArrayList<>(Arrays.asList(t4, t3)));
 		Guest g20 = new Guest(54, "03210987T", false, "Beatriz Herrera", new ArrayList<>(Arrays.asList(t2, t5, t6)));
 
+		// Instancio los pedidos que se hacen para las mesas.
+		Order o1 = new Order(0, null, 0);
+		Order o2 = new Order(0, null, 0);
+		Order o3 = new Order(0, null, 0);
+		Order o4 = new Order(0, null, 0);
+		Order o5 = new Order(0, null, 0);
+		Order o6 = new Order(0, null, 0);
+		Order o7 = new Order(0, null, 0);
+		Order o8 = new Order(0, null, 0);
+		Order o9 = new Order(0, null, 0);
+		Order o9 = new Order(0, null, 0);
 	}
 
 }
