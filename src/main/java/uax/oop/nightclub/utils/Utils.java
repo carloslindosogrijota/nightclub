@@ -1,5 +1,7 @@
 package uax.oop.nightclub.utils;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +13,15 @@ import uax.oop.nightclub.models.Table;
 
 public class Utils {
     // Método para registrar nuevos invitados en la discoteca, verificando su edad.
-    public ArrayList<Guest> addGuests(Guest myGuest, ArrayList<Guest> myClubGuests, NightClub myNightClub) {
+    public String addGuests(Guest myGuest, ArrayList<Guest> myClubGuests, NightClub myNightClub) {
+        String result = null;
         if (myGuest.getAge() >= 18) {
             myClubGuests.add(myGuest);
             myNightClub.getGuests().add(myGuest);
+            result += "The guest " + myGuest + "has been added to the list. At " + LocalDate.now() + " - "
+                    + LocalTime.now();
         }
-        return myClubGuests;
+        return result;
     }
 
     // Método para mostrar la lista de tablas disponibles.
@@ -40,22 +45,26 @@ public class Utils {
     // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se
     // coja una mesa ya reservada, y comprobar que la capacidad de personas en la
     // mesa no se exceda.
-    public Table tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
+    public String tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
+        String result = null;
         if (myTable.isIsAvailable() == true && myGuestList.size() < myTable.getCapacity()) {
             myTable.getGuestTablesReserved().addAll(myGuestList);
             myTable.setIsAvailable(false);
+            result += "The guests of the list have added to the table " + myTable.getTableId();
         } else if (myTable.isIsAvailable() == true && myGuestList.size() > myTable.getCapacity()) {
+            result += "The guests of the list exceeded the permitted number of guests";
             throw new Exception("The guests of the list exceeded the permitted number of guests");
         } else {
+            result += "The table isn't avaible";
             throw new Exception("The table isn't avaible");
         }
-        return myTable;
+        return result;
     }
 
     // Método para realizar pedidos asociados a mesas
-    public ArrayList<Order> tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
+    public String tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
         myTable.getOrdersOfTable().addAll(myOrdersList);
-        return myOrdersList;
+        return "The following orders have been added to the " + myTable;
     }
 
     // Método para calcular costo total de los pedidos de una mesa.
@@ -78,10 +87,11 @@ public class Utils {
     }
 
     // Método para liberar las mesas de la noche.
-    public void liberateTables(NightClub myNightClub) {
+    public String liberateTables(NightClub myNightClub) {
         for (Table x : myNightClub.getTables()) {
             x.setIsAvailable(false);
         }
+        return "The tables has been liberated.";
     }
 
     // Método para listar los invitados que asistieron.
