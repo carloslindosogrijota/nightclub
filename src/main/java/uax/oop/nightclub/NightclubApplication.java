@@ -42,16 +42,19 @@ public class NightclubApplication {
 		Guest g20 = new Guest(54, "03210987T", false, "Beatriz Herrera", new ArrayList<>(Arrays.asList(t2, t5, t6)));
 
 		// Instancio los pedidos que se hacen para las mesas.
-		Order o1 = new Order(0, null, 0);
-		Order o2 = new Order(0, null, 0);
-		Order o3 = new Order(0, null, 0);
-		Order o4 = new Order(0, null, 0);
-		Order o5 = new Order(0, null, 0);
-		Order o6 = new Order(0, null, 0);
-		Order o7 = new Order(0, null, 0);
-		Order o8 = new Order(0, null, 0);
-		Order o9 = new Order(0, null, 0);
-		Order o9 = new Order(0, null, 0);
+		// Instancio los pedidos que se hacen para las mesas.
+		// Instancio los pedidos que se hacen para las mesas.
+		Order o1 = new Order(1, "Vodka Ciroc", 35);
+		Order o2 = new Order(2, "Ron Barceló", 18);
+		Order o3 = new Order(3, "Vodka Belberet", 22);
+		Order o4 = new Order(4, "Jägermeister", 20);
+		Order o5 = new Order(5, "Ron Cacique", 19);
+		Order o6 = new Order(6, "Gintonic", 10);
+		Order o7 = new Order(7, "Black Label", 40);
+		Order o8 = new Order(8, "Ron la recompensa", 25);
+		Order o9 = new Order(9, "Mojito", 8);
+		Order o10 = new Order(10, "Ginebra", 15);
+
 	}
 
 }
