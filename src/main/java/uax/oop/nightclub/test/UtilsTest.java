@@ -11,12 +11,12 @@ import uax.oop.nightclub.utils.Utils;
 
 public class UtilsTest {
    // Instancio todas las mesas de la discoteca.
-   Table t1 = new Table(0, 9, new ArrayList<>(), true, true, , 1);
-   Table t2 = new Table(0, 9, new ArrayList<>(), true, true, , 2);
-   Table t3 = new Table(0, 4, new ArrayList<>(), true, false, , 3);
-   Table t4 = new Table(0, 4, new ArrayList<>(), true, false, , 4);
-   Table t5 = new Table(0, 4, new ArrayList<>(), true, false, , 5);
-   Table t6 = new Table(0, 4, new ArrayList<>(), true, false, , 6);
+   Table t1 = new Table(0, 9, new ArrayList<>(), true, true, new ArrayList<>(), 1);
+   Table t2 = new Table(0, 9, new ArrayList<>(), true, true, new ArrayList<>(), 2);
+   Table t3 = new Table(0, 4, new ArrayList<>(), true, false, new ArrayList<>(), 3);
+   Table t4 = new Table(0, 4, new ArrayList<>(), true, false, new ArrayList<>(), 4);
+   Table t5 = new Table(0, 4, new ArrayList<>(), true, false, new ArrayList<>(), 5);
+   Table t6 = new Table(0, 4, new ArrayList<>(), true, false, new ArrayList<>(), 6);
 
    // Instancio todos los clientes de la discoteca.
    Guest g1 = new Guest(16, "12345678A", false, "Juan Pérez", new ArrayList<>(Arrays.asList(t1)));
@@ -29,16 +29,6 @@ public class UtilsTest {
    Guest g8 = new Guest(30, "65432109H", false, "Elena Ramírez", new ArrayList<>(Arrays.asList(t4, t5)));
    Guest g9 = new Guest(32, "54321098I", false, "Fernando Díaz", new ArrayList<>(Arrays.asList(t5)));
    Guest g10 = new Guest(34, "43210987J", false, "Gabriela Suárez", new ArrayList<>(Arrays.asList(t5, t6)));
-   Guest g11 = new Guest(36, "32109876K", false, "Pablo Castro", new ArrayList<>(Arrays.asList(t6)));
-   Guest g12 = new Guest(38, "21098765L", false, "Carmen López", new ArrayList<>(Arrays.asList(t1, t6)));
-   Guest g13 = new Guest(40, "10987654M", false, "Javier Ortega", new ArrayList<>(Arrays.asList(t1, t3)));
-   Guest g14 = new Guest(42, "09876543N", false, "Marta Vázquez", new ArrayList<>(Arrays.asList(t2, t5)));
-   Guest g15 = new Guest(44, "08765432O", false, "Diego Fernández", new ArrayList<>(Arrays.asList(t3, t6)));
-   Guest g16 = new Guest(46, "07654321P", false, "Lucía Domínguez", new ArrayList<>(Arrays.asList(t1, t4)));
-   Guest g17 = new Guest(48, "06543210Q", false, "Raúl Sánchez", new ArrayList<>(Arrays.asList(t2, t6)));
-   Guest g18 = new Guest(50, "05432109R", false, "Patricia Reyes", new ArrayList<>(Arrays.asList(t5, t1)));
-   Guest g19 = new Guest(52, "04321098S", false, "Sergio Mendoza", new ArrayList<>(Arrays.asList(t4, t3)));
-   Guest g20 = new Guest(54, "03210987T", false, "Beatriz Herrera", new ArrayList<>(Arrays.asList(t2, t5, t6)));
 
    // Instancio los pedidos que se hacen para las mesas.
    Order o1 = new Order(1, "Vodka Ciroc", 35);
@@ -55,23 +45,36 @@ public class UtilsTest {
    ArrayList<Guest> myGuestsList = new ArrayList<>();
    ArrayList<Table> myTablesList = new ArrayList<>();
    ArrayList<Order> myOrdersList = new ArrayList<>();
-
    NightClub myNightClubItems = new NightClub(myGuestsList, myTablesList, myOrdersList);
 
    Utils myUtils = new Utils();
 
-   public void runTests() {
+   public void runTests() throws Exception {
       // Método para añadir los invitados aceptados por la discoteca.
-      myUtils.addGuests(g20, myNightClubItems);
+      myUtils.addGuests(g1, myNightClubItems);
+      myUtils.addGuests(g2, myNightClubItems);
+      myUtils.addGuests(g3, myNightClubItems);
+      myUtils.addGuests(g4, myNightClubItems);
+      myUtils.addGuests(g5, myNightClubItems);
+      myUtils.addGuests(g6, myNightClubItems);
+      myUtils.addGuests(g7, myNightClubItems);
+      myUtils.addGuests(g8, myNightClubItems);
+      myUtils.addGuests(g9, myNightClubItems);
+      myUtils.addGuests(g10, myNightClubItems);
 
       // Método para mostrar la lista de mesas disponibles.
       myUtils.listAvailableTables(myNightClubItems);
 
       // Método para añadir mesas VIP o normales a invitados.
-      myUtils.tableManagment(t6, g10);
+      myUtils.tableManagment(t1, g2);
+      myUtils.tableManagment(t3, g3);
+      myUtils.tableManagment(t3, g4);
+      myUtils.tableManagment(t3, g5);
+      myUtils.tableManagment(t3, g6);
 
       // Método para realizar pedidos asociados a mesas
-      myUtils.tablesOrders(myNightClubItems, t6);
+      myUtils.tablesOrders(o1, t1);
+      myUtils.tablesOrders(o7, t3);
 
       // Método para calcular costo total de los pedidos de una mesa.
       myUtils.orderTotalPriceOfTable(t6, myNightClubItems);
@@ -80,7 +83,7 @@ public class UtilsTest {
       myUtils.viewEarnings(myNightClubItems);
 
       // Método para liberar las mesas de la noche.
-      myUtils.liberateTables(myNightClubItems);
+      // myUtils.liberateTables(myNightClubItems);
 
       // Método para listar los invitados que asistieron.
       myUtils.assistedGuests(myNightClubItems);

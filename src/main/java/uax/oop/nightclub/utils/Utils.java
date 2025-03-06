@@ -62,8 +62,8 @@ public class Utils {
     }
 
     // Método para realizar pedidos asociados a mesas
-    public String tablesOrders(NightClub myNightClub, Table myTable) {
-        myTable.getOrdersOfTable().addAll(myNightClub.getOrders());
+    public String tablesOrders(Order myOrder, Table myTable) {
+        myTable.getOrdersOfTable().add(myOrder);
         return "The following orders have been added to the " + myTable;
     }
 
