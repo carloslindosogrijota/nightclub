@@ -11,7 +11,7 @@ import uax.oop.nightclub.utils.Utils;
 
 public class NightclubApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		// Instancio todas las mesas de la discoteca.
 		Table t1 = new Table(4, new ArrayList<>(), true, false, new ArrayList<>(), 1);
@@ -55,13 +55,33 @@ public class NightclubApplication {
 		Order o9 = new Order(9, "Mojito", 8);
 		Order o10 = new Order(10, "Ginebra", 15);
 
-		ArrayList<NightClub> myNightClub = new ArrayList<>();
+		ArrayList<Guest> myGuestsList = new ArrayList<>();
+		ArrayList<Table> myTablesList = new ArrayList<>();
+		ArrayList<Order> myOrdersList = new ArrayList<>();
+
+		NightClub myNightClubItems = new NightClub(myGuestsList, myTablesList, myOrdersList);
 
 		Utils myUtils = new Utils();
 
 		// Método para añadir los invitados aceptados por la discoteca.
-		myUtils.addGuests(g20, myNightClub);
+		myUtils.addGuests(g20, myNightClubItems);
 
+		// Método para mostrar la lista de mesas disponibles.
+		myUtils.listAvailableTables(myNightClubItems);
+
+		// Método para añadir mesas VIP o normales.
+		myUtils.tableManagment(t6, myNightClubItems);
+
+		// Método para calcular costo total de los pedidos de una mesa.
+		myUtils.tablesOrders(myNightClubItems, t6);
+
+		// Método para mostrar el total de ingresos de la noche.
+		myUtils.orderTotalPriceOfTable(t6, myNightClubItems);
+
+		// Método para liberar las mesas de la noche.
+		myUtils.
+
+		// Método para listar los invitados que asistieron.
 	}
 
 }

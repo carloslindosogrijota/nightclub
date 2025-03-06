@@ -23,12 +23,12 @@ public class Utils {
         return result;
     }
 
-    // Método para mostrar la lista de tablas disponibles.
+    // Método para mostrar la lista de mesas disponibles.
     // clasificándolas como VIP o normales.
-    public Map<String, ArrayList<Table>> listAvailableTables(ArrayList<Table> myTablesList) {
+    public Map<String, ArrayList<Table>> listAvailableTables(NightClub myNightClub) {
         ArrayList<Table> myAvailableVIPTables = new ArrayList<>();
         ArrayList<Table> myAvailableTables = new ArrayList<>();
-        for (Table x : myTablesList) {
+        for (Table x : myNightClub.getTables()) {
             if (x.isIsAvailable() && x.isIsVip()) {
                 myAvailableVIPTables.add(x);
             } else if (x.isIsAvailable() && !x.isIsVip()) {
@@ -44,13 +44,13 @@ public class Utils {
     // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se
     // coja una mesa ya reservada, y comprobar que la capacidad de personas en la
     // mesa no se exceda.
-    public String tableManagment(Table myTable, ArrayList<Guest> myGuestList) throws Exception {
+    public String tableManagment(Table myTable, NightClub myNightClub) throws Exception {
         String result = null;
-        if (myTable.isIsAvailable() == true && myGuestList.size() < myTable.getCapacity()) {
-            myTable.getGuestTablesReserved().addAll(myGuestList);
+        if (myTable.isIsAvailable() == true && myNightClub.getGuests().size() < myTable.getCapacity()) {
+            myTable.getGuestTablesReserved().addAll(myNightClub.getGuests());
             myTable.setIsAvailable(false);
             result += "The guests of the list have added to the table " + myTable.getTableId();
-        } else if (myTable.isIsAvailable() == true && myGuestList.size() > myTable.getCapacity()) {
+        } else if (myTable.isIsAvailable() == true && myNightClub.getGuests().size() > myTable.getCapacity()) {
             result += "The guests of the list exceeded the permitted number of guests";
             throw new Exception("The guests of the list exceeded the permitted number of guests");
         } else {
@@ -61,8 +61,8 @@ public class Utils {
     }
 
     // Método para realizar pedidos asociados a mesas
-    public String tablesOrders(ArrayList<Order> myOrdersList, Table myTable) {
-        myTable.getOrdersOfTable().addAll(myOrdersList);
+    public String tablesOrders(NightClub myNightClub, Table myTable) {
+        myTable.getOrdersOfTable().addAll(myNightClub.getOrders());
         return "The following orders have been added to the " + myTable;
     }
 
