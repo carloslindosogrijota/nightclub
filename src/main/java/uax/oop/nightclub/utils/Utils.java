@@ -53,10 +53,8 @@ public class Utils {
             result += "The guests of the list have added to the table " + myTable.getTableId();
         } else if (myTable.isIsAvailable() == true && myTable.getCapacity() > myTable.getCapacityLimity()) {
             result += "The guests of the list exceeded the permitted number of guests";
-            throw new Exception("The guests of the list exceeded the permitted number of guests");
         } else {
             result += "The table isn't avaible";
-            throw new Exception("The table isn't avaible");
         }
         return result;
     }
