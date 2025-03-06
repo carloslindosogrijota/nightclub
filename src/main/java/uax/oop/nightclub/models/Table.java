@@ -5,13 +5,16 @@ import java.util.ArrayList;
 public class Table {
     private int tableId;
     private int capacity;
+    private int capacityLimity;
     private boolean isVip;
     private boolean isAvailable;
     private ArrayList<Guest> guestTablesReserved;
     private ArrayList<Order> ordersOfTable;
 
-    public Table(int capacity, ArrayList<Guest> guestTablesReserved, boolean isAvailable, boolean isVip, ArrayList<Order> ordersOfTable, int tableId) {
+    public Table(int capacity, int capacityLimity, ArrayList<Guest> guestTablesReserved, boolean isAvailable,
+            boolean isVip, ArrayList<Order> ordersOfTable, int tableId) {
         this.capacity = capacity;
+        this.capacityLimity = capacityLimity;
         this.guestTablesReserved = guestTablesReserved;
         this.isAvailable = isAvailable;
         this.isVip = isVip;
@@ -33,6 +36,14 @@ public class Table {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public int getCapacityLimity() {
+        return capacityLimity;
+    }
+
+    public void setCapacityLimity(int capacityLimity) {
+        this.capacityLimity = capacityLimity;
     }
 
     public boolean isIsVip() {
@@ -69,8 +80,8 @@ public class Table {
 
     @Override
     public String toString() {
-        return "Table [tableId=" + tableId + ", capacity=" + capacity + ", isVip=" + isVip + ", isAvailable="
-                + isAvailable + ", guestTablesReserved=" + guestTablesReserved + ", ordersOfTable=" + ordersOfTable
-                + "]";
+        return "Table [tableId=" + tableId + ", capacity=" + capacity + ", capacityLimity=" + capacityLimity
+                + ", isVip=" + isVip + ", isAvailable=" + isAvailable + ", guestTablesReserved=" + guestTablesReserved
+                + ", ordersOfTable=" + ordersOfTable + "]";
     }
 }

@@ -44,13 +44,14 @@ public class Utils {
     // Método para añadir mesas VIP o normales a 'x' persona/s, comprobar que no se
     // coja una mesa ya reservada, y comprobar que la capacidad de personas en la
     // mesa no se exceda.
-    public String tableManagment(Table myTable, NightClub myNightClub) throws Exception {
+    public String tableManagment(Table myTable, Guest myGuest) throws Exception {
         String result = null;
-        if (myTable.isIsAvailable() == true && myNightClub.getGuests().size() < myTable.getCapacity()) {
-            myTable.getGuestTablesReserved().addAll(myNightClub.getGuests());
+        if (myTable.isIsAvailable() == true && myTable.getCapacity() <= myTable.getCapacityLimity()) {
+            myTable.getGuestTablesReserved().add(myGuest);
             myTable.setIsAvailable(false);
+            myTable.setCapacity(myTable.getCapacity() + 1);
             result += "The guests of the list have added to the table " + myTable.getTableId();
-        } else if (myTable.isIsAvailable() == true && myNightClub.getGuests().size() > myTable.getCapacity()) {
+        } else if (myTable.isIsAvailable() == true && myTable.getCapacity() > myTable.getCapacityLimity()) {
             result += "The guests of the list exceeded the permitted number of guests";
             throw new Exception("The guests of the list exceeded the permitted number of guests");
         } else {
