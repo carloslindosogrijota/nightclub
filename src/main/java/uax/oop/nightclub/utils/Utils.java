@@ -13,10 +13,9 @@ import uax.oop.nightclub.models.Table;
 
 public class Utils {
     // Método para registrar nuevos invitados en la discoteca, verificando su edad.
-    public String addGuests(Guest myGuest, ArrayList<Guest> myClubGuests, NightClub myNightClub) {
+    public String addGuests(Guest myGuest, NightClub myNightClub) {
         String result = null;
         if (myGuest.getAge() >= 18) {
-            myClubGuests.add(myGuest);
             myNightClub.getGuests().add(myGuest);
             result += "The guest " + myGuest + "has been added to the list. At " + LocalDate.now() + " - "
                     + LocalTime.now();

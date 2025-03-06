@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import uax.oop.nightclub.models.Guest;
+import uax.oop.nightclub.models.NightClub;
 import uax.oop.nightclub.models.Order;
 import uax.oop.nightclub.models.Table;
+import uax.oop.nightclub.utils.Utils;
 
 public class NightclubApplication {
 
@@ -42,8 +44,6 @@ public class NightclubApplication {
 		Guest g20 = new Guest(54, "03210987T", false, "Beatriz Herrera", new ArrayList<>(Arrays.asList(t2, t5, t6)));
 
 		// Instancio los pedidos que se hacen para las mesas.
-		// Instancio los pedidos que se hacen para las mesas.
-		// Instancio los pedidos que se hacen para las mesas.
 		Order o1 = new Order(1, "Vodka Ciroc", 35);
 		Order o2 = new Order(2, "Ron Barceló", 18);
 		Order o3 = new Order(3, "Vodka Belberet", 22);
@@ -54,6 +54,13 @@ public class NightclubApplication {
 		Order o8 = new Order(8, "Ron la recompensa", 25);
 		Order o9 = new Order(9, "Mojito", 8);
 		Order o10 = new Order(10, "Ginebra", 15);
+
+		ArrayList<NightClub> myNightClub = new ArrayList<>();
+
+		Utils myUtils = new Utils();
+
+		// Método para añadir los invitados aceptados por la discoteca.
+		myUtils.addGuests(g20, myNightClub);
 
 	}
 
