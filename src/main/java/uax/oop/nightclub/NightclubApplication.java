@@ -45,49 +45,65 @@ public class NightclubApplication {
 		Order o9 = new Order(9, "Mojito", 8);
 		Order o10 = new Order(10, "Ginebra", 15);
 
-		ArrayList<Guest> myGuestsList = new ArrayList<>();
-		ArrayList<Table> myTablesList = new ArrayList<>();
-		ArrayList<Order> myOrdersList = new ArrayList<>();
+		ArrayList<Table> myTablesList = new ArrayList<>(Arrays.asList(t1, t2, t3, t4, t5, t6));
+		ArrayList<Guest> myGuestsList = new ArrayList<>(Arrays.asList(g1, g2, g3, g4, g5, g6, g7, g8, g9, g10));
+		ArrayList<Order> myOrdersList = new ArrayList<>(Arrays.asList(o1, o2, o3, o4, o5, o6, o7, o8, o9, o10));
 		NightClub myNightClubItems = new NightClub(myGuestsList, myTablesList, myOrdersList);
 
 		Utils myUtils = new Utils();
 
 		// Método para añadir los invitados aceptados por la discoteca.
-		myUtils.addGuests(g1, myNightClubItems);
-		myUtils.addGuests(g2, myNightClubItems);
-		myUtils.addGuests(g3, myNightClubItems);
-		myUtils.addGuests(g4, myNightClubItems);
-		myUtils.addGuests(g5, myNightClubItems);
-		myUtils.addGuests(g6, myNightClubItems);
-		myUtils.addGuests(g7, myNightClubItems);
-		myUtils.addGuests(g8, myNightClubItems);
-		myUtils.addGuests(g9, myNightClubItems);
-		myUtils.addGuests(g10, myNightClubItems);
+		System.out.println("\n\n------------------ THE GUESTS ----------------------------");
+		System.out.println(myUtils.addGuests(g1, myNightClubItems));
+		System.out.println(myUtils.addGuests(g3, myNightClubItems));
+		System.out.println(myUtils.addGuests(g4, myNightClubItems));
+		System.out.println(myUtils.addGuests(g5, myNightClubItems));
+		System.out.println(myUtils.addGuests(g6, myNightClubItems));
+		System.out.println(myUtils.addGuests(g7, myNightClubItems));
+		System.out.println(myUtils.addGuests(g8, myNightClubItems));
+		System.out.println(myUtils.addGuests(g9, myNightClubItems));
+		System.out.println(myUtils.addGuests(g10, myNightClubItems));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
 		// Método para mostrar la lista de mesas disponibles.
-		myUtils.listAvailableTables(myNightClubItems);
+		System.out.println("------------------ AVAILABLE TABLES ----------------------------");
+		System.out.println(myUtils.listAvailableTables(myNightClubItems));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
+		System.out.println("------------------ ADDED TABLES ----------------------------");
 		// Método para añadir mesas VIP o normales a invitados.
-		myUtils.tableManagment(t1, g2);
-		myUtils.tableManagment(t3, g3);
-		myUtils.tableManagment(t3, g4);
-		myUtils.tableManagment(t3, g5);
-		myUtils.tableManagment(t3, g6);
+		System.out.println(myUtils.tableManagment(t1, g2));
+		System.out.println(myUtils.tableManagment(t3, g3));
+		System.out.println(myUtils.tableManagment(t3, g4));
+		System.out.println(myUtils.tableManagment(t3, g5));
+		System.out.println(myUtils.tableManagment(t3, g6));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
+		System.out.println("------------------ THE ORDERS ----------------------------");
 		// Método para realizar pedidos asociados a mesas
-		myUtils.tablesOrders(o1, t1);
-		myUtils.tablesOrders(o7, t3);
+		System.out.println(myUtils.tablesOrders(o1, t1));
+		System.out.println(myUtils.tablesOrders(o7, t3));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
+		System.out.println("------------------ THE TOTAL PRICE OF A TABLE ORDER ----------------------------");
 		// Método para calcular costo total de los pedidos de una mesa.
-		myUtils.orderTotalPriceOfTable(t6, myNightClubItems);
+		System.out.println(myUtils.orderTotalPriceOfTable(t6));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
+		System.out.println("------------------ ALL EARNINGS ----------------------------");
 		// Método para mostrar el total de ingresos de la noche.
-		myUtils.viewEarnings(myNightClubItems);
+		System.out.println(myUtils.viewEarnings(myNightClubItems));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
+		System.out.println("------------------ UNDO ALL TABLES ----------------------------");
 		// Método para liberar las mesas de la noche.
-		// myUtils.liberateTables(myNightClubItems);
+		System.out.println(myUtils.liberateTables(myNightClubItems));
+		System.out.println("---------------------------------------------------------\n\n\n");
 
+		System.out.println("------------------ ASSISTED GUESTS  ----------------------------");
 		// Método para listar los invitados que asistieron.
-		myUtils.assistedGuests(myNightClubItems);
+		System.out.println(myUtils.assistedGuests(myNightClubItems));
+		System.out.println("---------------------------------------------------------");
 	}
+
 }

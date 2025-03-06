@@ -14,11 +14,13 @@ import uax.oop.nightclub.models.Table;
 public class Utils {
     // Método para registrar nuevos invitados en la discoteca, verificando su edad.
     public String addGuests(Guest myGuest, NightClub myNightClub) {
-        String result = null;
+        String result = "";
         if (myGuest.getAge() >= 18) {
             myNightClub.getGuests().add(myGuest);
             result += "The guest " + myGuest + "has been added to the list. At " + LocalDate.now() + " - "
                     + LocalTime.now();
+        } else {
+            result += "The guest does not meet the minimum age.";
         }
         return result;
     }
@@ -45,7 +47,7 @@ public class Utils {
     // coja una mesa ya reservada, y comprobar que la capacidad de personas en la
     // mesa no se exceda.
     public String tableManagment(Table myTable, Guest myGuest) throws Exception {
-        String result = null;
+        String result = "";
         if (myTable.isIsAvailable() == true && myTable.getCapacity() <= myTable.getCapacityLimity()) {
             myTable.getGuestTablesReserved().add(myGuest);
             myTable.setIsAvailable(false);
@@ -66,11 +68,10 @@ public class Utils {
     }
 
     // Método para calcular costo total de los pedidos de una mesa.
-    public double orderTotalPriceOfTable(Table myTable, NightClub myNightClub) {
+    public double orderTotalPriceOfTable(Table myTable) {
         double result = 0;
         for (Order x : myTable.getOrdersOfTable()) {
             result += x.getTotalPrice();
-            myNightClub.getOrders().add(x);
         }
         return result;
     }

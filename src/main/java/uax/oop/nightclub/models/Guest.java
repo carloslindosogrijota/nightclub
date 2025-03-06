@@ -20,30 +20,39 @@ public class Guest {
     public String getDni() {
         return dni;
     }
+
     public void setDni(String dni) {
         this.dni = dni;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
+
     public boolean isHasReservation() {
         return hasReservation;
     }
+
     public void setHasReservation(boolean hasReservation) {
         this.hasReservation = hasReservation;
     }
+
     public ArrayList<Table> getReservedTables() {
         return reservedTables;
     }
+
     public void setReservedTables(ArrayList<Table> reservedTables) {
         this.reservedTables = reservedTables;
     }
@@ -51,6 +60,6 @@ public class Guest {
     @Override
     public String toString() {
         return "Guest [dni=" + dni + ", name=" + name + ", age=" + age + ", hasReservation=" + hasReservation
-                + ", reservedTables=" + reservedTables + "]";
+                + ", reservedTablesCount=" + (reservedTables != null ? reservedTables.size() : 0) + "]";
     }
 }
