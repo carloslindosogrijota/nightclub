@@ -50,8 +50,7 @@ The NightClub Management System is a Java application designed to manage a night
 
 ## Project Structure
 ````
-uax/
-└── oop/
+oop/
     └── nightclub/
         ├── NightclubApplication.java
         ├── models/
