@@ -64,14 +64,16 @@ public class Utils {
     // Método para realizar pedidos asociados a mesas
     public String tablesOrders(Order myOrder, Table myTable) {
         myTable.getOrdersOfTable().add(myOrder);
-        return "The following orders have been added to the " + myTable;
+        return "The following orders have been added to the " + myTable + "\n";
     }
 
     // Método para calcular costo total de los pedidos de una mesa.
     public double orderTotalPriceOfTable(Table myTable) {
         double result = 0;
+
         for (Order x : myTable.getOrdersOfTable()) {
-            result += x.getTotalPrice();
+            System.out.println("Precio del pedido: " + x.getPrice());
+            result += x.getPrice();
         }
         return result;
     }
@@ -80,7 +82,7 @@ public class Utils {
     public double viewEarnings(NightClub myNightClub) {
         double result = 0;
         for (Order x : myNightClub.getOrders()) {
-            result += x.getTotalPrice();
+            result += x.getPrice();
         }
         return result;
     }

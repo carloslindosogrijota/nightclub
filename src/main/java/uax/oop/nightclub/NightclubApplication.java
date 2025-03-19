@@ -87,7 +87,7 @@ public class NightclubApplication {
 
 		System.out.println("------------------ TOTAL COST OF A TABLE ----------------------------");
 		// Método para calcular costo total de los pedidos de una mesa.
-		System.out.println(myUtils.orderTotalPriceOfTable(t6));
+		System.out.println(myUtils.orderTotalPriceOfTable(t3));
 		System.out.println("---------------------------------------------------------\n\n\n");
 
 		System.out.println("------------------ ALL EARNINGS ----------------------------");
